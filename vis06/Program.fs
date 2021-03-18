@@ -113,7 +113,7 @@ let parse i (cmd:string)  =
                                         let c = cmd.Substring(cmd.IndexOf("LOOP") + 4)
                                         Loop (c.Trim(), -1)
      |_ when cmd.IndexOf("NOP") >= 0 -> Nop
-     |_ when cmd.IndexOf("NOP") >= 0 -> Exit
+     |_ when cmd.IndexOf("EXIT") >= 0 -> Exit
      |_ -> Label ("",-1)
 
 let read _ = Console.ReadLine()
