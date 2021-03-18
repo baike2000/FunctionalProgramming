@@ -11,7 +11,9 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "2DFunction", "2DFunction\2D
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Vis03Samples", "Vis03Samples\Vis03Samples.fsproj", "{7EA57BAF-3A81-4B8A-AB30-B27FC2065897}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Vis04", "Vis04\Vis04.fsproj", "{C2ABD6F2-82D9-4050-85DB-4BBAAED2D9AD}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Vis04", "Vis04\Vis04.fsproj", "{C2ABD6F2-82D9-4050-85DB-4BBAAED2D9AD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "vis06", "vis06\vis06.fsproj", "{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{C2ABD6F2-82D9-4050-85DB-4BBAAED2D9AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C2ABD6F2-82D9-4050-85DB-4BBAAED2D9AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C2ABD6F2-82D9-4050-85DB-4BBAAED2D9AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
