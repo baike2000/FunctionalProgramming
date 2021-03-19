@@ -15,6 +15,10 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Vis04", "Vis04\Vis04.fsproj
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "vis06", "vis06\vis06.fsproj", "{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "vis07", "vis07\vis07.fsproj", "{EFF3E68E-3338-480E-96FB-D09FF861A6D5}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Turing", "Turing\Turing.fsproj", "{FA1405DF-36BB-4B25-98DF-4BA539908480}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE4A6DDA-CA35-47E9-929C-AAF33C52CA29}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFF3E68E-3338-480E-96FB-D09FF861A6D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFF3E68E-3338-480E-96FB-D09FF861A6D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFF3E68E-3338-480E-96FB-D09FF861A6D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFF3E68E-3338-480E-96FB-D09FF861A6D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1405DF-36BB-4B25-98DF-4BA539908480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1405DF-36BB-4B25-98DF-4BA539908480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1405DF-36BB-4B25-98DF-4BA539908480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1405DF-36BB-4B25-98DF-4BA539908480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
