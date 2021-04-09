@@ -28,6 +28,10 @@ let read = ReadLines "C:/DiskD/users/flash/Files/University/functional_programmi
 
 read
 
+let (+) a b = (a,b)
+let f x = x + x
+(f 3, f 3.0)
+
 
 
 
