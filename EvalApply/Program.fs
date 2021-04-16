@@ -35,7 +35,7 @@ let funof = function
 | "<=" -> (function [Int(a);Int(b)] -> if a<=b then Int(1) else Int(0))
 
 let rec eval exp env =
-  printfn "%A" env
+  printfn "eval %A" env
   match exp with
     App(e1,e2) -> apply (eval e1 env) (eval e2 env)
   | Int(n) -> Int(n)
@@ -54,6 +54,7 @@ let rec eval exp env =
   |_ -> exp
 
 and apply e1 e2 =
+  printfn "app %A %A" e1 e2
   match e1 with
      Closure(Lam(v,e),env) -> eval e (Map.add v e2 env)
    | RClosure(Lam(v,e),env,id) -> eval e (Map.add v e2 (Map.add id e1 env))
