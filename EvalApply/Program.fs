@@ -11,6 +11,7 @@ type expr =
  | Op of id*int*expr list
  | Closure of expr*env
  | RClosure of expr*env*id
+ | Err of id
 and
  env = Map<id,expr>;;   
 ;;
@@ -62,13 +63,57 @@ and apply e1 e2 =
       if n=1 then (funof id)(args@[e2])
       else Op(id,n-1,args@[e2])
 
+let rec parse x =
+  match x with 
+   "letrec"::id::"="::T1 -> 
+     let (tr1,rem) = parse T1 in
+       match rem with
+        "in"::T2 -> 
+          let (tr2,T3) = parse T2 in
+           (LetRec(id,tr1,tr2),T3)
+        | _ -> (Err(id), T1)
+  | "fun"::id::"->"::T -> 
+         let (t,r) = parse T in (Lam(id,t),r)
+  | "("::T -> 
+    let (t1,r1) = parse T in
+      match r1 with
+        ")"::T1 -> (t1,T1)
+      | _ -> (Err(")"), T)
+  | "<"::T -> (PFunc("<"),T)
+  | "*"::T -> (PFunc("*"),T)
+  | "."::T ->    
+    let (t1,r1) = parse T in
+    let (t2,r2) = parse r1 in
+       (App(t1,t2),r2)
+  | "if"::T-> 
+    let (t1,r1) = parse T
+    let (t2,r2) = parse r1
+    let (t3,r3) = parse r2
+    (Cond(t1,t2,t3),r3)
+  | id::T -> (Var(id),T)
+
+let prog (txt:string list) = 
+  txt |> 
+  Seq.collect(fun x -> x.Split([|' '|])) |> 
+  Seq.filter(fun s -> s<>"") |> 
+  Seq.toList
+
+
 let E exp = eval exp Map.empty;;
 
-let n = Let("id",Lam("x",Var("x")),Let("sq",Lam("z", App(App(PFunc("*"),Var("z")),Var("z"))),App(Var("sq"),App(Var("id"),Int(5)))))
-let d = E n
+//let n = Let("id",Lam("x",Var("x")),Let("sq",Lam("z", App(App(PFunc("*"),Var("z")),Var("z"))),App(Var("sq"),App(Var("id"),Int(5)))))
+//let d = E n
+
+let p = ["letrec fact = ";"   fun x -> ";"       if <.x.1 ";
+         "       then 1 ";"       else *.x.(fact.(-.x.1)) ";
+         "in ";"  fact.5"]
 
 [<EntryPoint>]
 let main argv = 
-    printfn "%A" d
+    let tokens = prog p
+    printfn "%A" tokens
+    let (t,_) = parse tokens
+    printfn "%A" t
+    //printfn "%A" (E t)
     System.Console.ReadKey() |> ignore
     0 // return an integer exit code

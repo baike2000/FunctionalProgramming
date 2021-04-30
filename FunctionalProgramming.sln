@@ -21,7 +21,11 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "Turing", "Turing\Turing.fsp
 EndProject
 Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "EvalApply", "EvalApply\EvalApply.fsproj", "{1EB77364-E48D-48DE-B618-28BF3ADFC958}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "SECD", "SECD\SECD.fsproj", "{1AF73FE4-F116-4F42-9548-C122BE382B80}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "SECD", "SECD\SECD.fsproj", "{1AF73FE4-F116-4F42-9548-C122BE382B80}"
+EndProject
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "vis11", "vis11\vis11.fsproj", "{528A5AC7-39B7-4F17-AAA5-F176A7A9A8DF}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "vis12", "vis12\vis12.fsproj", "{85807B65-B6BD-40E1-8045-063245DED84F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{1AF73FE4-F116-4F42-9548-C122BE382B80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AF73FE4-F116-4F42-9548-C122BE382B80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AF73FE4-F116-4F42-9548-C122BE382B80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{528A5AC7-39B7-4F17-AAA5-F176A7A9A8DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{528A5AC7-39B7-4F17-AAA5-F176A7A9A8DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{528A5AC7-39B7-4F17-AAA5-F176A7A9A8DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{528A5AC7-39B7-4F17-AAA5-F176A7A9A8DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85807B65-B6BD-40E1-8045-063245DED84F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85807B65-B6BD-40E1-8045-063245DED84F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85807B65-B6BD-40E1-8045-063245DED84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85807B65-B6BD-40E1-8045-063245DED84F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
