@@ -71,11 +71,10 @@ let cplot xdim f =
 
 [<EntryPoint>]
 let main argv = 
-    plot (-4.0,4.0) (-1.0,1.0) cos
+    plot (-4.0,4.0) (-1.0,1.0) log
     ////plot1 (-4.0,4.0) sin
     //implot (-4.0,4.0) sin
     //cplot (-4.0,4.0) sin
 
     Console.ReadKey() |> ignore;
     0 // return an integer exit code
-

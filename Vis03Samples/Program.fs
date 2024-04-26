@@ -11,6 +11,7 @@ let rec length l =
     |[]    -> 0
     |_::t -> 1+length(t)
 
+length [1;2;3;4;5]
 List.length [1;2;3;4;5]
 
 let rec lengthF = function 
@@ -27,11 +28,17 @@ let rec sum L =
     | [x] -> x
     | x::t -> x+sum t
 
+sum [1;2;3]
+
 let rec mem x = function
     [] -> false
     | z::t -> z=x || mem x t
 
+mem 4 [3;2;1]
+
 List.iter2(fun x y -> printfn "%A.%s" x y) [1;2;3] ["One";"Two";"Three"]
+
+[1;2;3] |> List.iter(printfn "%A") 
 
 let rec append M L = 
   match M with
@@ -42,6 +49,24 @@ let rec remove x = function
     [] -> []
     | h::t when h=x -> remove x t 
     | h::t -> h::remove x t
+
+let removefirst x l =
+    let rec rem x l s =
+        match l,s with
+        |[],_ -> []
+        |h::t, false when h=x -> rem x t true
+        |h::t, true -> h::rem x t true
+        |h::t, false -> h::rem x t false
+    rem x l false
+removefirst 3 [1;3;4;3]
+
+List.concat [[1;2;3];[5;3;5];[3;4];[5;6]]
+
+[1..10] |> List.fold (fun a x -> a * x) 1
+
+[1..100] |> List.sortBy (fun x ->  -x)
+
+["1";"2";"3"] |> List.map (fun x -> int(x)) |> List.filter(fun x -> x% 2 <> 0)
 
 let rec iter f = function
       [] -> ()
@@ -59,15 +84,27 @@ let rec map f = function
     [] -> []
     | h::t -> (f h)::map f t;;
 
+List.map float [1;2;3]
+
 let rec filter p = function
     [] -> []
     | x::t when p(x) -> x::filter p t
     | x::t -> filter p t
 
+List.filter (fun x -> x<>3) [1;2;3]
+
 let sumFold = List.fold (fun ac x -> ac+x) 0
 let prodFold = List.fold (fun ac x -> ac*x) 1
 let sumByInt f = List.fold (fun ac x ->ac*(f x)) 0
 let sumRed = List.reduce (fun u v -> u+v)
+
+sumFold [1..100]
+
+prodFold [1..30]
+
+sumRed [1..10]
+
+
 
 let exists p = List.fold (fun a x -> a || x) false
 let forall p = List.fold (fun a x -> a && x) true
@@ -89,7 +126,7 @@ let rec primes l =
    | [] -> []
    | h::t -> h::primes (List.filter (fun x -> x%h>0) t)
 
-let primeslist = primes [2..100]
+let primeslist = primes [2..1000]
 
 let rec fold_list f = function
     | [] -> []
@@ -119,7 +156,12 @@ let stack : image->image->image = (@)
 let glue  : image->image->image = List.map2 (@)
 let inverse : image->image = List.map (List.map (fun c -> if c='.' then '#' else '.'))
 
-inverse sample
+let printimage image = 
+    image |> List.iter(fun x -> printfn("%s") (new string(x|>List.toArray)))
+
+printimage sample
+printimage (inverse sample)
+printimage (glue sample (flipH (flipV sample)))
 
 let rec revN = function
     [] -> []
@@ -131,7 +173,9 @@ let rev L =
        | h::t -> rv (h::s) t 
    rv [] L
 
+revN [1;2;3]
 
+[|1;2;3|] |> Array.map(fun x -> x*2 )
 
 [<EntryPoint>]
 let main argv =
